@@ -158,7 +158,7 @@
                 "arguments": [{"className": "string?"}, {"properties": "{[string]: any}?"}]
             },
             "CreateElement": {
-                "arguments": [{"className": "string"}, {"properties": "{[string]: any}"}],
+                "arguments": [{"className": "ScreenObjectList | string"}, {"properties": "{[string]: any}"}],
                 "returns": "ScreenObject"
             }
         }
