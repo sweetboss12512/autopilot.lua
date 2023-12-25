@@ -87,7 +87,7 @@ class PartDefinitionsGenerator():
         # Finish code
         code.append(event_code)
         code_sep = f",\n    "
-        return f"export type {part['_name']} = {{\n    {code_sep.join(code)}\n}}"
+        return f"export type {part['_name']} = {{\n    {code_sep.join(code)}\n}}\n"
 
     def _generate_and_store_part(self, part: dict):
         if self.parts.get(part['_name']): return self.parts[part['_name']]
@@ -98,7 +98,7 @@ class PartDefinitionsGenerator():
     def generate(self):
         self.parts = {}
         for part_name, part in self.data.items():
-            part.update({ "_name": part_name })
+            part.update({ "_name": f"PilotLua{part_name}" })
             self._generate_and_store_part(part)
         return f"\n".join(list(self.parts.values()))
 
