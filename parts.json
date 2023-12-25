@@ -219,10 +219,10 @@
         "extends": "Part",
         "methods": {
             "GetBodies": {
-                "returns": "Iterator<string, nil>"
+                "returns": "Iterator<string, { PlanetType: PlanetType }>"
             },
             "GetSystems": {
-                "returns": "Iterator<string, nil>"
+                "returns": "CoordinateIterator"
             }
         }
     },
@@ -236,7 +236,31 @@
                 "returns": "RegionInfo"
             },
             "WhenRegionLoads": {
-                "arguments": [{"callback": "(regionData: RegionInfo) -> ()"}]
+                "arguments": [{"callback": "(regionData: WhenRegionLoadsData) -> ()"}]
+            }
+        }
+    },
+    "Teleporter": {
+        "extends": "Part",
+        "properties": {
+            "Coordinates": "string",
+            "TeleporterID": "number",
+            "ForceLocalTeleport": "boolean"
+        }
+    },
+    "VehicleSeat": {
+        "extends": "Part",
+        "properties": {
+            "Enabled": "boolean",
+		    "Speed": "number",
+		    "Mode": "number"
+        }
+    },
+    "PowerCell": {
+        "extends": "Part",
+        "methods": {
+            "GetAmount": {
+                "returns": "number"
             }
         }
     },

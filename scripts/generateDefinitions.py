@@ -47,7 +47,10 @@ def main():
         single_overloads.append(f"((port: PortLike, partType: \"{part}\") -> {part})")
         multi_overloads.append(f"((port: PortLike, partType: \"{part}\") -> {{{part}}})")
     single_overloads.append(f"((port: PortLike, partType: string) -> {part_generator.default_part_name})")
+    single_overloads.append(f"((port: PortLike, partType: PartList) -> {part_generator.default_part_name})")
+
     multi_overloads.append(f"((port: PortLike, partType: string) -> {{{part_generator.default_part_name}}})")
+    multi_overloads.append(f"((port: PortLike, partType: PartList) -> {{{part_generator.default_part_name}}})")
     sep = '\n    & '
     content += f"declare GetPartFromPort: {sep.join(single_overloads)}\n"
     content += f"declare GetPartsFromPort: {sep.join(multi_overloads)}\n"
