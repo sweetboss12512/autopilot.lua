@@ -68,7 +68,7 @@
         "methods": {
             "GetReading": {
                 "arguments": [{"typeId": "number"}],
-                "returns": "number | Vector3"
+                "returns": "any"
             }
         }
     },
