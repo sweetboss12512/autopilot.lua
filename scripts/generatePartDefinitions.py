@@ -52,7 +52,7 @@ class PartDefinitionsGenerator():
         for method_name, method in part.get("methods", {}).items():
             returns = method.get("returns", "()")
             arguments_code = []
-            arguments_code.append(f"self: {part['_name']}")
+            arguments_code.append(f"self: {part['_type']}")
             if method_name == "Configure":
                 # Build Configure method
                 configure_code = []
@@ -67,7 +67,12 @@ class PartDefinitionsGenerator():
             code.append(f"{method_name}: ({', '.join(arguments_code)}) -> {returns}")
         # Properties
         for property_name, property_value in part.get("properties", {}).items():
+            if property_name in READONLY_PROPERTIES:
+                continue
+
             code.append(f"{property_name}: {property_value}")
+        
+        code.append(f'ClassName: "{part["_name"]}"')
         # Events
         i = -1
         event_code = ""
@@ -78,16 +83,16 @@ class PartDefinitionsGenerator():
                 event_arguments_code.append(f"{arg_name}: {arg_type}")
             event_name = f"\"{event_name}\""
             if i == 0:
-                event_code += f"Connect: ((self: {part['_name']}, event: {event_name}, callback: ({', '.join(event_arguments_code)}) -> ()) -> EventConnection)"
+                event_code += f"Connect: ((self: {part['_type']}, event: {event_name}, callback: ({', '.join(event_arguments_code)}) -> ()) -> EventConnection)"
             else:
-                event_code += f"\n        & ((self: {part['_name']}, event: {event_name}, callback: ({', '.join(event_arguments_code)}) -> ()) -> EventConnection)"
+                event_code += f"\n        & ((self: {part['_type']}, event: {event_name}, callback: ({', '.join(event_arguments_code)}) -> ()) -> EventConnection)"
         # There cannot be 0 events
         if i == -1:
             raise Exception(f"{part['_name']} has no events? {part}")
         # Finish code
         code.append(event_code)
         code_sep = f",\n    "
-        return f"export type {part['_name']} = {{\n    {code_sep.join(code)}\n}}\n"
+        return f"export type {part['_type']} = {{\n    {code_sep.join(code)}\n}}\n"
 
     def _generate_and_store_part(self, part: dict):
         if self.parts.get(part['_name']): return self.parts[part['_name']]
@@ -98,7 +103,7 @@ class PartDefinitionsGenerator():
     def generate(self):
         self.parts = {}
         for part_name, part in self.data.items():
-            part.update({ "_name": f"PilotLua{part_name}" })
+            part.update({ "_name": part_name, "_type": f"PilotLua{part_name}" })
             self._generate_and_store_part(part)
         return f"\n".join(list(self.parts.values()))
 
