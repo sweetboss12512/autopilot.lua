@@ -12,7 +12,7 @@ export type StarType = "Red" | "Orange" | "Yellow" | "Blue" | "Neutron"
 type EventConnection = {
     Unbind: (self: EventConnection) -> ()
 }
-type ScreenObject = {
+export type ScreenObject = {
     ChangeProperties: (self: ScreenObject, properties: {[string]: any}) -> (),
     AddChild: (self: ScreenObject, child: ScreenObject) -> (),
     Destroy: (self: ScreenObject) -> ()
