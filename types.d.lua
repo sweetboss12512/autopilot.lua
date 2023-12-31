@@ -1,5 +1,5 @@
 -- Utility Types
-type PortLike = number | {GUID: string}
+export type PilotLuaPortLike = number | PilotLuaPart
 type Iterator<K, V> = () -> (K, V)
 
 -- Some literals for autocomplete

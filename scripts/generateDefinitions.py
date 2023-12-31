@@ -44,13 +44,13 @@ def main():
     for part, _ in parts_data.items():
         if part == part_generator.default_part_name:
             continue
-        single_overloads.append(f"((port: PortLike, partType: \"{part}\") -> PilotLua{part})")
-        multi_overloads.append(f"((port: PortLike, partType: \"{part}\") -> {{PilotLua{part}}})")
-    single_overloads.append(f"((port: PortLike, partType: string) -> {part_generator.default_part_name})")
-    single_overloads.append(f"((port: PortLike, partType: PartList) -> {part_generator.default_part_name})")
+        single_overloads.append(f"((port: PilotLuaPortLike, partType: \"{part}\") -> PilotLua{part})")
+        multi_overloads.append(f"((port: PilotLuaPortLike, partType: \"{part}\") -> {{PilotLua{part}}})")
+    single_overloads.append(f"((port: PilotLuaPortLike, partType: string) -> {part_generator.default_part_name})")
+    single_overloads.append(f"((port: PilotLuaPortLike, partType: PartList) -> {part_generator.default_part_name})")
 
-    multi_overloads.append(f"((port: PortLike, partType: string) -> {{{part_generator.default_part_name}}})")
-    multi_overloads.append(f"((port: PortLike, partType: PartList) -> {{{part_generator.default_part_name}}})")
+    multi_overloads.append(f"((port: PilotLuaPortLike, partType: string) -> {{{part_generator.default_part_name}}})")
+    multi_overloads.append(f"((port: PilotLuaPortLike, partType: PartList) -> {{{part_generator.default_part_name}}})")
     sep = '\n    & '
     content += f"declare GetPartFromPort: {sep.join(single_overloads)}\n"
     content += f"declare GetPartsFromPort: {sep.join(multi_overloads)}\n"

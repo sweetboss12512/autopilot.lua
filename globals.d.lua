@@ -1,7 +1,7 @@
 -- Microcontroller Globals
 -- GetPartFromPort and GetPartsFromPort are generated via script
-declare GetPort: (port: PortLike) -> Part
-declare TriggerPort: (port: PortLike) -> Part
+declare GetPort: (port: PilotLuaPortLike) -> Part
+declare TriggerPort: (port: PilotLuaPortLike) -> Part
 
 declare SandboxID: string
 declare SandboxRunID: number
