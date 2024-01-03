@@ -9,8 +9,8 @@ export type PlanetType = "Desert" | "Terra" | "EarthLike" | "Ocean" | "Tundra" |
 export type StarType = "Red" | "Orange" | "Yellow" | "Blue" | "Neutron"
 
 -- Microcontroller Types
-type EventConnection = {
-    Unbind: (self: EventConnection) -> ()
+export type PilotLuaEventConnection = {
+    Unbind: (self: PilotLuaEventConnection) -> ()
 }
 type ScreenObject = {
     ChangeProperties: (self: ScreenObject, properties: {[string]: any}) -> (),

@@ -83,9 +83,9 @@ class PartDefinitionsGenerator():
                 event_arguments_code.append(f"{arg_name}: {arg_type}")
             event_name = f"\"{event_name}\""
             if i == 0:
-                event_code += f"Connect: ((self: {part['_type']}, event: {event_name}, callback: ({', '.join(event_arguments_code)}) -> ()) -> EventConnection)"
+                event_code += f"Connect: ((self: {part['_type']}, event: {event_name}, callback: ({', '.join(event_arguments_code)}) -> ()) -> PilotLuaEventConnection)"
             else:
-                event_code += f"\n        & ((self: {part['_type']}, event: {event_name}, callback: ({', '.join(event_arguments_code)}) -> ()) -> EventConnection)"
+                event_code += f"\n        & ((self: {part['_type']}, event: {event_name}, callback: ({', '.join(event_arguments_code)}) -> ()) -> PilotLuaEventConnection)"
         # There cannot be 0 events
         if i == -1:
             raise Exception(f"{part['_name']} has no events? {part}")
