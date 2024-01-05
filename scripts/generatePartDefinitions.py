@@ -4,8 +4,8 @@ import json
 
 READONLY_PROPERTIES = [
     "ClassName",
-    "Position",
-    "CFrame",
+    # "Position",
+    # "CFrame",
     # "GUID"
 ]
 
