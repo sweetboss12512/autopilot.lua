@@ -6,7 +6,7 @@ READONLY_PROPERTIES = [
     "ClassName",
     "Position",
     "CFrame",
-    "GUID"
+    # "GUID"
 ]
 
 def _parse_list_dict(listdict: list) -> list[tuple]:
