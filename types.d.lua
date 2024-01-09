@@ -12,7 +12,7 @@ export type StarType = "Red" | "Orange" | "Yellow" | "Blue" | "Neutron"
 export type PilotLuaEventConnection = {
     Unbind: (self: PilotLuaEventConnection) -> ()
 }
-type ScreenObject = {
+export type ScreenObject = {
     ChangeProperties: (self: ScreenObject, properties: {[string]: any}) -> (),
     AddChild: (self: ScreenObject, child: ScreenObject) -> (),
     Destroy: (self: ScreenObject) -> ()
