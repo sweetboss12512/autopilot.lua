@@ -90,20 +90,15 @@
         "methods": {
             "ClearDisk": {},
             "Write": {
-                "arguments": [{"key": "string"}, {"data": "string"}]
+                "arguments": [{"key": "string"}, {"data": "string | any"}]
             },
             "Read": {
                 "arguments": [{"key": "string"}],
-                "returns": "string"
+                "returns": "string | any"
             },
             "ReadEntireDisk": {
-                "returns": "{[string]: string}"
+                "returns": "{[string]: any}"
             }
-        },
-        "properties": {
-            "ShieldStrength": "number",
-            "RegenerationSpeed": "number",
-            "ShieldRadius": "number"
         }
     },
     "Bin": {
