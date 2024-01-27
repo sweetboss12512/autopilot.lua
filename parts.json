@@ -90,11 +90,11 @@
         "methods": {
             "ClearDisk": {},
             "Write": {
-                "arguments": [{"key": "string"}, {"data": "string | any"}]
+                "arguments": [{"key": "string"}, {"data": "any"}]
             },
             "Read": {
                 "arguments": [{"key": "string"}],
-                "returns": "string | any"
+                "returns": "any"
             },
             "ReadEntireDisk": {
                 "returns": "{[string]: any}"
