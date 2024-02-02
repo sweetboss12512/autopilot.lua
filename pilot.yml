@@ -1,0 +1,31 @@
+base: roblox
+
+globals:
+  GetPartFromPort:
+    any: true
+
+    must_use: true
+
+  GetPartsFromPort:
+    any: true
+
+  Beep:
+    any: true
+
+  JSONEncode:
+    any: true
+
+  JSONDecode:
+    any: true
+
+  Communicate:
+    any: true
+
+  TriggerPort:
+    any: true
+
+  SandboxID:
+    struct: string
+
+  SandboxRunID:
+    struct: string

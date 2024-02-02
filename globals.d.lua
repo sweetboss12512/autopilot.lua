@@ -6,7 +6,7 @@ declare TriggerPort: (port: PilotLuaPortLike) -> Part
 declare SandboxID: string
 declare SandboxRunID: number
 
-declare Beep: (pitch: number) -> ()
+declare Beep: (pitch: number?) -> ()
 declare JSONDecode: (json: string) -> {[string]: any}
 declare JSONEncode: (dataToEncode: {[string]: any}) -> string
 declare Communicate: () -> ()
