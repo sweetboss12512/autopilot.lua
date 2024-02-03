@@ -12,10 +12,11 @@ export type StarType = "Red" | "Orange" | "Yellow" | "Blue" | "Neutron"
 export type PilotLuaEventConnection = {
     Unbind: (self: PilotLuaEventConnection) -> ()
 }
-export type ScreenObject = {
-    ChangeProperties: (self: ScreenObject, properties: {[string]: any}) -> (),
-    AddChild: (self: ScreenObject, child: ScreenObject) -> (),
-    Destroy: (self: ScreenObject) -> ()
+export type PilotLuaScreenObject = {
+    ChangeProperties: (self: PilotLuaScreenObject, properties: {[string]: any}) -> (),
+    AddChild: (self: PilotLuaScreenObject, child: PilotLuaScreenObject) -> (),
+    Destroy: (self: PilotLuaScreenObject) -> (),
+	Clone: (self: PilotLuaScreenObject) -> PilotLuaScreenObject
 }
 type Cursor = {
     X: number,
@@ -23,7 +24,7 @@ type Cursor = {
     Player: string,
     Pressed: boolean
 }
-export type RegionInfo = {
+export type PilotLuaRegionInfo = {
     Type: "Planet",
     SubType: nil,
     Name: string,

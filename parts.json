@@ -154,7 +154,7 @@
             },
             "CreateElement": {
                 "arguments": [{"className": "ScreenObjectList | string"}, {"properties": "{[string]: any}"}],
-                "returns": "ScreenObject"
+                "returns": "PilotLuaScreenObject"
             }
         }
     },
@@ -228,7 +228,7 @@
         },
         "methods": {
             "GetCoordinate": {
-                "returns": "RegionInfo"
+                "returns": "PilotLuaRegionInfo"
             },
             "WhenRegionLoads": {
                 "arguments": [{"callback": "(regionData: WhenRegionLoadsData) -> ()"}]

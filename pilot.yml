@@ -1,11 +1,15 @@
 base: roblox
 
 globals:
+  debug:
+    removed: true
+
+  bit32:
+    removed: true
+
   GetPartFromPort:
     any: true
-
-    must_use: true
-
+  
   GetPartsFromPort:
     any: true
 
