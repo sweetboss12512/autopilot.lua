@@ -1,4 +1,5 @@
 # autopilot.lua
+Full code completion for [pilot.lua](https://github.com/iimurpyh/pilot-lua/wiki/) using JohnnyMorganz' Luau Language Server.
 
 ## Fork Additions
 
@@ -17,7 +18,6 @@ Paste this in your selene.toml:
 ```toml
 std="pilot"
 ```
-Full code completion for [pilot.lua](https://github.com/iimurpyh/pilot-lua/wiki/) using JohnnyMorganz' Luau Language Server.
 
 ## Getting Started
 
