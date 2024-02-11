@@ -46,10 +46,10 @@ def main():
             continue
         single_overloads.append(f"((port: PilotLuaPortLike, partType: \"{part}\") -> PilotLua{part})")
         multi_overloads.append(f"((port: PilotLuaPortLike, partType: \"{part}\") -> {{PilotLua{part}}})")
-    single_overloads.append(f"((port: PilotLuaPortLike, partType: PartList | string) -> PilotLua{part_generator.default_part_name})")
+    single_overloads.append(f"((port: PilotLuaPortLike, partType: PilotLuaPartList | string) -> PilotLua{part_generator.default_part_name})")
 
     # uhh it works -- sweetboss151 1/6/2024
-    multi_overloads.append(f"((port: PilotLuaPortLike, partType: PartList | string) -> {{{'PilotLua' + part_generator.default_part_name}}})")
+    multi_overloads.append(f"((port: PilotLuaPortLike, partType: PilotLuaPartList | string) -> {{{'PilotLua' + part_generator.default_part_name}}})")
     sep = '\n    & '
     content += f"declare GetPartFromPort: {sep.join(single_overloads)}\n"
     content += f"declare GetPartsFromPort: {sep.join(multi_overloads)}\n"

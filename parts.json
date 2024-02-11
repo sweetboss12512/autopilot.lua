@@ -420,7 +420,7 @@
     "Antenna": {
         "extends": "Part",
         "properties": {
-            "AntennaID": "string"
+            "AntennaID": "string | number"
         }
     },
     "Polysilicon": {
