@@ -1,23 +1,6 @@
 # autopilot.lua
+
 Full code completion for [pilot.lua](https://github.com/iimurpyh/pilot-lua/wiki/) using JohnnyMorganz' Luau Language Server.
-
-## Fork Additions
-
-- Every part type is a global type and prefixed with 'PilotLua' such as `PilotLuaGyro`
-- Some types were fixed/updated
-- Some string lists such as `PilotLuaPartList` are global now. You can use them to have autocomplete for your own functions
-```lua
-local function SearchPorts(partName: PilotLuaPartList | string, errorIfNotFound: boolean?, maxPortNumber: number?): PilotLuaPart & any	
-    ...
-end
-```
-
-- `pilot.yml` file for selene so it stops crying 😡
-
-Paste this in your selene.toml:
-```toml
-std="pilot"
-```
 
 ## Getting Started
 
@@ -79,3 +62,9 @@ If you want to build autopilot.lua from scratch, follow the steps below:
        type Properties = {[string]: any}
        ...
      ```
+
+## Contributions
+
+We welcome contributions and bug reports. Feel free to fork the repository, make your changes, and submit a pull request. If you encounter any issues or have suggestions for improvement, please open an issue.
+
+If you are having issues with setup, feel free to DM me before opening an issue. (`@3nfg`)
