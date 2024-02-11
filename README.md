@@ -12,6 +12,7 @@ end
 ```
 
 - `pilot.yml` file for selene so it stops crying 😡
+
 Paste this in your selene.toml:
 ```toml
 std="pilot"
