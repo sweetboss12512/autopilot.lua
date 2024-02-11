@@ -2,7 +2,7 @@
 
 ## Fork Additions
 
-- Every part type is global and prefixed with 'PilotLua<PartName>'
+- Every part type is a global type and prefixed with 'PilotLua' such as `PilotLuaGyro`
 - Some types were fixed/updated
 - Some string lists such as `PilotLuaPartList` are global now. You can use them to have autocomplete for your own functions
 ```lua
