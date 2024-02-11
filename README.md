@@ -10,3 +10,5 @@ local function SearchPorts(partName: PilotLuaPartList | string, errorIfNotFound:
     ...
 end
 ```
+
+- `pilot.yml` file for selene so it stops crying 😡
