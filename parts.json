@@ -500,5 +500,236 @@
             "TriggerMode": "number",
             "ToolName": "string"
         }
+    },
+    "DriveBox": {
+        "extends": "Part",
+        "properties": {
+            "Reversal": "boolean",
+            "Ratio": "number"
+        }
+    },
+    "Hull": {
+        "extends": "Part",
+        "properties": {
+            "TempType": "string"
+        }
+    },
+    "Coupler": {
+        "extends": "Part",
+        "properties": {
+            "CouplerID": "number"
+        }
+    },
+    "RoundWedge": {
+        "extends": "Part",
+        "properties": {
+            "TempType": "string"
+        }
+    },
+    "Apparel": {
+        "extends": "Part",
+        "properties": {
+            "Limb": "string",
+            "Transparency": "number"
+        }
+    },
+    "Blade": {
+        "extends": "Part",
+        "properties": {
+            "Shape": "number",
+            "TempType": "string"
+        }
+    },
+    "CornerRoundWedge": {
+        "extends": "Part",
+        "properties": {
+            "TempType": "string"
+        }
+    },
+    "Balloon": {
+        "extends": "Part",
+        "properties": {
+            "Buoyancy": "number"
+        }
+    },
+    "Filter": {
+        "extends": "Part",
+        "properties": {
+            "Filter": "string"
+        }
+    },
+    "Truss": {
+        "extends": "Part",
+        "properties": {
+            "TempType": "string"
+        }
+    },
+    "Prosthetic": {
+        "extends": "Part",
+        "properties": {
+            "Limb": "string"
+        }
+    },
+    "RoundWedge2": {
+        "extends": "Part",
+        "properties": {
+            "TempType": "string"
+        }
+    },
+    "Engine": {
+        "extends": "Part",
+        "properties": {
+            "EngineSpeed": "number"
+        }
+    },
+    "BallastTank": {
+        "extends": "Part",
+        "properties": {
+            "Buoyancy": "number"
+        }
+    },
+    "CornerTetra": {
+        "extends": "Part",
+        "properties": {
+            "TempType": "string"
+        }
+    },
+    "Anchor": {
+        "extends": "Part",
+        "properties": {
+            "Anchored": "boolean"
+        }
+    },
+    "SteamEngine": {
+        "extends": "Part",
+        "properties": {
+            "EngineSpeed": "number"
+        }
+    },
+    "Sign": {
+        "extends": "Part",
+        "properties": {
+            "TextFont": "string",
+            "TextColor": "string",
+            "SignText": "string"
+        }
+    },
+    "Door": {
+        "extends": "Part",
+        "properties": {
+            "TempType": "string",
+            "DoorSwitch": "boolean"
+        }
+    },
+    "Relay": {
+        "extends": "Part",
+        "properties": {
+            "LinkerID": "number",
+            "Mode": "number"
+        }
+    },
+    "CornerWedge": {
+        "extends": "Part",
+        "properties": {
+            "TempType": "string"
+        }
+    },
+    "Wedge": {
+        "extends": "Part",
+        "properties": {
+            "TempType": "string"
+        }
+    },
+    "Turbofan": {
+        "extends": "Part",
+        "properties": {
+            "TurboFanSpeed": "number"
+        }
+    },
+    "Cone": {
+        "extends": "Part",
+        "properties": {
+            "TempType": "string"
+        }
+    },
+    "Constructor": {
+        "extends": "Part",
+        "properties": {
+            "ModelCode": "string",
+            "Autolock": "boolean",
+            "RelativeToConstructor": "boolean"
+        }
+    },
+    "Piston": {
+        "extends": "Part",
+        "properties": {
+            "Position1": "number",
+            "Speed": "number",
+            "Position2": "number"
+        }
+    },
+    "CornerRoundWedge2": {
+        "extends": "Part",
+        "properties": {
+            "TempType": "string"
+        }
+    },
+    "Tetrahedron": {
+        "extends": "Part",
+        "properties": {
+            "TempType": "string"
+        }
+    },
+    "Ball": {
+        "extends": "Part",
+        "properties": {
+            "TempType": "string"
+        }
+    },
+    "Beacon": {
+        "extends": "Part",
+        "properties": {
+            "ShowOnMap": "boolean",
+            "BeaconName": "string"
+        }
+    },
+    "Winch": {
+        "extends": "Part",
+        "properties": {
+            "DeltaLength": "number",
+            "MaxLength": "number",
+            "MinLength": "number"
+        }
+    },
+    "HalfSphere": {
+        "extends": "Part",
+        "properties": {
+            "TempType": "string"
+        }
+    },
+    "Transporter": {
+        "extends": "Part",
+        "properties": {
+            "TransporterID": "number"
+        }
+    },
+    "ObjectDetector": {
+        "extends": "Part",
+        "properties": {
+            "DisplayDistance": "boolean",
+            "MaxDistance": "number",
+            "DisplayPosition": "boolean",
+            "DisplayLockedBy": "boolean",
+            "TriggerAtDistance": "string",
+            "DisplayDurability": "boolean",
+            "DisplayColor": "boolean",
+            "DisplayName": "boolean"
+        }
+    },
+    "Cylinder": {
+        "extends": "Part",
+        "properties": {
+            "TempType": "string"
+        }
     }
 }
