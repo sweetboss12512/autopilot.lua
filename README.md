@@ -8,7 +8,7 @@ To get started, follow these simple steps:
 
 1. **Download the Definitions File:**
 
-   - Head over to the [Releases](https://github.com/flxwed/autopilot.lua/releases) tab.
+   - Head over to the [Releases](https://github.com/sweetboss12512/autopilot.lua/releases) tab.
    - Download the latest version of the `pilot.d.lua` file.
 
 2. **Install luau-lsp for VSCode:**
@@ -45,7 +45,7 @@ If you want to build autopilot.lua from scratch, follow the steps below:
    - Clone the repository to your local machine
 
      ```
-     git clone https://github.com/flxwed/autopilot.lua.git
+     git clone https://github.com/sweetboss12512/autopilot.lua.git
      ```
 
 2. **Generate Definitions via Script**
