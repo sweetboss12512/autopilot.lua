@@ -1,4 +1,4 @@
-# Simple script that outputs the current parts as a lua table array
+# Simple script that outputs the current parts as a lua table array. This is used for the MBTools part scraper in roblox studio.
 import sys
 import os
 import json
