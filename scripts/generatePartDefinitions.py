@@ -75,7 +75,7 @@ class PartDefinitionsGenerator():
 
             code.append(f"{property_name}: {property_value}")
         
-        code.append(f'ClassName: "{part["_name"]}"')
+        code.append(f'ClassName: "{part["_name"]}" | string')
         # Events
         i = -1
         event_code = ""
