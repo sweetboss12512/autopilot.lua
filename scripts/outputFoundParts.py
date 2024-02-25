@@ -9,6 +9,7 @@ if len(sys.argv) < 2:
     
 project = sys.argv[1]
 parts_json = os.path.join(project, "parts.json")
+output_file = os.path.join(project, "build", "parts.lua")
 
 content = "local foundParts = {"
 
@@ -21,5 +22,5 @@ with open(parts_json, "r") as file:
         
 content += "}"
 
-with open(os.path.join("build", "parts.lua"), "w") as file:
+with open(output_file, "w") as file:
     file.write(content)
