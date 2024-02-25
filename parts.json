@@ -12,7 +12,7 @@
             "Configure": {"--comment": "Autofilled by definitions generator"}
         },
         "events": {
-            "Triggered": [],
+            "Triggered": [{"userID": "number"}],
             "Configured": []
         }
     },
