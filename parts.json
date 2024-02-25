@@ -132,7 +132,7 @@
                 "arguments": [{"data": "string"}, {"id": "number"}]
             },
             "RealPostRequest": {
-                "arguments": [{"domain": "string"}, {"data": "string"}, {"asyncBool": "boolean"}, {"transformFunction": "(...any) -> ()"}, {"optionalHeaders": "{[string]: any}?"}],
+                "arguments": [{"domain": "string"}, {"data": "string"}, {"asyncBool": "boolean?"}, {"transformFunction": "(...any) -> ()?"}, {"optionalHeaders": "{[string]: any}?"}],
                 "returns": "{response: string, success: boolean}"
             }
         },
