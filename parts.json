@@ -266,7 +266,7 @@
     "Speaker": {
         "extends": "Part",
         "properties": {
-            "Audio": "number",
+            "Audio": "string | number",
             "Pitch": "number"
         },
         "methods": {
