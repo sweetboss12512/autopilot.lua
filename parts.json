@@ -609,8 +609,8 @@
     "Sign": {
         "extends": "Part",
         "properties": {
-            "TextFont": "string",
-            "TextColor": "string",
+            "TextFont": "Enum.Font",
+            "TextColor": "Color3",
             "SignText": "string"
         }
     },
