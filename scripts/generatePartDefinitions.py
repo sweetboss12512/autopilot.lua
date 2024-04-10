@@ -2,11 +2,16 @@ import os
 import sys
 import json
 
+# Properties to exclude from :Configure()
 READONLY_PROPERTIES = [
     "ClassName",
     "Position",
     "CFrame",
-    "GUID"
+    "GUID",
+    "Temperature",
+    "Size",
+    "Color",
+    "Durability"
 ]
 
 def _parse_list_dict(listdict: list) -> list[tuple]:
@@ -69,9 +74,6 @@ class PartDefinitionsGenerator():
         for property_name, property_value in part.get("properties", {}).items():
             # if property_name in READONLY_PROPERTIES:
             #     continue
-
-            if property_name == "ClassName":
-                continue
 
             code.append(f"{property_name}: {property_value}")
         
