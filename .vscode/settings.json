@@ -1,0 +1,9 @@
+{
+   "luau-lsp.sourcemap.enabled": false,
+   "luau-lsp.types.roblox": true,
+   "luau-lsp.types.definitionFiles": ["./build/pilot.d.lua"],
+   "luau-lsp.require.fileAliases": {
+      "repr": "requires/repr",
+      "fs": "requires/fs"
+   }
+}

@@ -1,35 +1,38 @@
 base: roblox
 
 globals:
-  debug:
-    removed: true
+   debug:
+      removed: true
 
-  bit32:
-    removed: true
+   bit32:
+      removed: true
 
-  GetPartFromPort:
-    any: true
-  
-  GetPartsFromPort:
-    any: true
+   GetPartFromPort:
+      any: true
 
-  Beep:
-    any: true
+   GetPartsFromPort:
+      any: true
 
-  JSONEncode:
-    any: true
+   Beep:
+      any: true
 
-  JSONDecode:
-    any: true
+   JSONEncode:
+      any: true
 
-  Communicate:
-    any: true
+   JSONDecode:
+      any: true
 
-  TriggerPort:
-    any: true
+   Communicate:
+      any: true
 
-  SandboxID:
-    struct: string
+   TriggerPort:
+      any: true
 
-  SandboxRunID:
-    struct: string
+   SandboxID:
+      struct: string
+
+   SandboxRunID:
+      struct: string
+
+   Microcontroller:
+      any: true

@@ -1,0 +1,25 @@
+{
+   "bundle": {
+      "require_mode": {
+         "name": "path",
+         "module_folder_name": "init"
+      }
+   },
+   "rules": [
+      // "remove_comments",
+      // "remove_nil_declaration",
+      // "compute_expression",
+      // "remove_unused_if_branch",
+      // "filter_after_early_return",
+      // "remove_empty_do",
+      // {
+      //     "rule": "convert_require",
+      //     "current": "path",
+      //     "target": {
+      //       "name": "roblox",
+      //       "indexing_style": "property",
+      //       "rojo_sourcemap": "./sourcemap.json"
+      //     }
+      // }
+   ]
+}
