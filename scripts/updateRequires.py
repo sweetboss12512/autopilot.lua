@@ -31,9 +31,10 @@ def main():
     }
 
     for file_name in requires:
-        darklua_output["bundle"]["excludes"].append(file_name)
+        name_without_ext = os.path.splitext(file_name)[0]
+        darklua_output["bundle"]["excludes"].append(name_without_ext)
 
-        vscode_settings_output["luau-lsp.require.fileAliases"][os.path.splitext(file_name)[0]] = f"requires/{file_name}"
+        vscode_settings_output["luau-lsp.require.fileAliases"][name_without_ext] = f"requires/{file_name}"
 
     print(json.dumps(vscode_settings_output, indent=4))
 
