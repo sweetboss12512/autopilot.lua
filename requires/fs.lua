@@ -12,7 +12,18 @@ type fs = {
 	pwd: "/",
 	root: {
 		attributes: attributes,
+		contents: {
+			[string]: {
+				attributes: attributes,
+				device: { [any]: any } | (...any) -> (),
+				kind: "device",
+			},
+		},
+
+		kind: "directory",
 	},
+
+	readdir: (self: fs, path: string) -> { string },
 }
 
 return {} :: fs
