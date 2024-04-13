@@ -1,11 +1,13 @@
 {
-   "luau-lsp.sourcemap.enabled": false,
-   "luau-lsp.types.roblox": true,
-   "luau-lsp.types.definitionFiles": ["./build/pilot.d.lua"],
-   "luau-lsp.require.fileAliases": {
-      // Pilot.lua modules
-      "repr": "requires/repr",
-      "fs": "requires/fs",
-      "tween": "requires/tween.lua"
-   }
+    "luau-lsp.sourcemap.enabled": false,
+    "luau-lsp.types.roblox": true,
+    "luau-lsp.types.definitionFiles": [
+        "./build/pilot.d.lua"
+    ],
+    "luau-lsp.require.fileAliases": {
+        "fs": "requires/fs.lua",
+        "players": "requires/players.lua",
+        "repr": "requires/repr.lua",
+        "tween": "requires/tween.lua"
+    }
 }
