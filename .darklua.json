@@ -4,6 +4,7 @@
             "name": "path"
         },
         "excludes": [
+            "@wos/**",
             "fs.lua",
             "players.lua",
             "repr.lua",
