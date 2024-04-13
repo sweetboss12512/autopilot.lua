@@ -3,7 +3,7 @@
       "default": true,
       "properties": {
          "ClassName": "string",
-         "Position": "Vector2",
+         "Position": "Vector3",
          "CFrame": "CFrame",
          "GUID": "string",
          "Color": "Color3",
@@ -227,6 +227,19 @@
       },
       "events": {
          "OnClick": [{ "player": "string" }]
+      }
+   },
+   "ARController": {
+      "extends": "Screen",
+      "methods": {
+         "ClearElements3D": {},
+         "CreateElement3D": {
+            "arguments": [
+               { "shape": "Element3DShape" },
+               { "properties": "{[string]: any}" }
+            ],
+            "returns": "PilotLuaElement3D"
+         }
       }
    },
    "Light": {

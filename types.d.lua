@@ -7,6 +7,8 @@ export type PilotLuaPartList = "Wood" | "DelayWire" | "Hatch" | "Boiler" | "Extr
 export type ScreenObjectList = "Frame" | "ScrollingFrame" | "ImageLabel" | "TextButton" | "TextLabel"
 export type PlanetType = "Desert" | "Terra" | "EarthLike" | "Ocean" | "Tundra" | "Forest" | "Exotic" | "Barren" | "Gas"
 export type StarType = "Red" | "Orange" | "Yellow" | "Blue" | "Neutron"
+-- ARController elements, Enum.PartType:GetEnumItems()
+type Element3DShape = "Ball" | "Block" | "Cylinder" | "Wedge" | "CornerWedge"
 
 -- Microcontroller Types
 export type PilotLuaEventConnection = {
@@ -18,6 +20,13 @@ export type PilotLuaScreenObject = {
     Destroy: (self: PilotLuaScreenObject) -> (),
 	Clone: (self: PilotLuaScreenObject) -> PilotLuaScreenObject,
 	[string]: any
+}
+export type PilotLuaElement3D = PilotLuaScreenObject & {
+	Size: Vector3,
+	Position: Vector3,
+	CFrame: CFrame,
+	Color: Color3,
+	BrickColor: BrickColor
 }
 type Cursor = {
     X: number,
