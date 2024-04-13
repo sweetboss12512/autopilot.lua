@@ -3,7 +3,9 @@
    "luau-lsp.types.roblox": true,
    "luau-lsp.types.definitionFiles": ["./build/pilot.d.lua"],
    "luau-lsp.require.fileAliases": {
+      // Pilot.lua modules
       "repr": "requires/repr",
-      "fs": "requires/fs"
+      "fs": "requires/fs",
+      "tween": "requires/tween.lua"
    }
 }
