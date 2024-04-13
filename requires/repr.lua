@@ -1,7 +1,7 @@
 type options = {
-	commentPointerIds: false,
+	commentPointerIds: boolean,
 	environment: boolean,
-	includeFunctionLocation: false,
+	includeFunctionLocation: boolean,
 	metatables: boolean,
 	pointerIds: boolean,
 	pretty: boolean,
@@ -9,11 +9,11 @@ type options = {
 	robloxFullName: boolean,
 	robloxProperFullName: boolean,
 	robloxShortcutServices: boolean,
-	sanitizeInvalids: false,
+	sanitizeInvalids: boolean,
 	semicolons: boolean,
 	sortKeys: boolean,
 	spaces: number,
-	stubFunctions: false,
+	stubFunctions: boolean,
 	tabs: boolean,
 	trailingSeparator: boolean,
 }
