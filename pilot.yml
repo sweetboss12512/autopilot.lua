@@ -41,5 +41,8 @@ globals:
    FileSystem:
       any: true
 
+   RawFileSystem:
+      any: true
+
    pilot:
       any: true

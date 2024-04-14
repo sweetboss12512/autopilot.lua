@@ -42,3 +42,33 @@ type FileNode = string | Folder;
 declare FileSystem: {
 	new: (files: Folder?) -> FileSystemObject
 }
+
+type fs = typeof(require("fs"))
+
+-- NOTE: fs type isn't working here...
+type RawFileSystem = {
+	Device: (arg1: any, arg2: any) -> (),
+	Directory: (arg1: any, arg2: any, arg3: any) -> (),
+	File: (arg1: any, arg2: any) -> (),
+	Link: (arg1: any, arg2: any) -> (),
+	Root: (arg1: any, arg2: any) -> (),
+	SYSTEM_NOACCESS: {
+		permissions: {
+			owner: "system";
+			read: false;
+			write: false
+		} 
+	},
+	SYSTEM_READONLY: {
+		permissions: {
+			owner: "system";
+			read: true;
+			write: false
+		}
+	},
+	read: (self: RawFileSystem, fs: fs, path: string) -> (),
+	readlink: (arg1: any, arg2: any, arg3: any, arg4: any) -> (),
+	write: (self: RawFileSystem, fs: fs, path: string, contents: string, arg5: any) -> (),
+}
+
+declare RawFileSystem: RawFileSystem
