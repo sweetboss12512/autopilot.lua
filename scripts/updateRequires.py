@@ -36,8 +36,6 @@ def main():
 
         vscode_settings_output["luau-lsp.require.fileAliases"][name_without_ext] = f"requires/{file_name}"
 
-    print(json.dumps(vscode_settings_output, indent=4))
-
     with open(DARKLUA_JSON, "w") as file:
         json.dump(darklua_output, file, indent=4)
 
