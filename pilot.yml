@@ -34,5 +34,12 @@ globals:
    SandboxRunID:
       struct: string
 
+   # New unstable globals
    Microcontroller:
+      any: true
+
+   FileSystem:
+      any: true
+
+   pilot:
       any: true

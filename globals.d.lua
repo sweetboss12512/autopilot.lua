@@ -13,25 +13,32 @@ declare Communicate: () -> ()
 
 declare Microcontroller: PilotLuaMicrocontroller
 
--- TODO: Finish this later...
---[[ type FileSystem = {
-	chdir: (arg1: any, arg2: any) -> (),
-	copy: (arg1: any, arg2: any, arg3: any) -> (),
-	exists: (arg1: any, arg2: any) -> (),
-	filename: (arg1: any) -> (),
-	join: (...any) -> (),
-	mkdir: (arg1: any, arg2: any) -> (),
+-- FileSystem, basically the same as fs?
+type FileSystemObject = {
+	pwd: "/",
+	readdir: (self: FileSystemObject, path: string) -> { string },
+	chdir: (arg1: any, arg2: any) -> (), -- Broken?
+	copy: (self: FileSystemObject, from: string, to: string) -> (),
+	exists: (self: FileSystemObject, path: string) -> (),
+	filename: (path: string) -> string,
+	join: (...string) -> string,
+	mkdir: (self: FileSystemObject, path: string) -> (),
 	mklink: (arg1: any, arg2: any, arg3: any) -> (),
 	moveMerge: (arg1: any, arg2: any, arg3: any) -> (),
-	new: (arg1: any) -> (),
-	parentdir: (arg1: any) -> (),
-	pwd: (arg1: any) -> (),
-	readdir: (arg1: any, arg2: any) -> (),
-	readfile: (arg1: any, arg2: any) -> (),
+	parentdir: (path: string) -> string,
+	-- pwd: (arg1: any) -> (), -- wut
+	readfile: (self: FileSystemObject, path: string) -> string,
 	rename: (arg1: any, arg2: any, arg3: any) -> (),
 	resolve: (arg1: any, arg2: any) -> (),
 	separator: "/",
-	split: (arg1: any) -> (),
+	split: (path: string) -> { string },
 	unlink: (arg1: any, arg2: any) -> (),
-	writefile: (arg1: any, arg2: any, arg3: any) -> ()
-} ]]
+	writefile: (self: FileSystemObject, path: string, contents: any) -> (),
+}
+
+type Folder = {[string]: FileNode?};
+type FileNode = string | Folder;
+
+declare FileSystem: {
+	new: (files: Folder?) -> FileSystemObject
+}

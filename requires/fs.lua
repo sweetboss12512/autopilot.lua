@@ -9,7 +9,7 @@ type attributes = {
 type fs = {
 	attributes: attributes,
 	kind: "root",
-	-- pwd: "/",
+	pwd: "/",
 	root: {
 		attributes: attributes,
 		contents: {
@@ -24,10 +24,10 @@ type fs = {
 	},
 
 	readdir: (self: fs, path: string) -> { string },
-	-- chdir: (arg1: any, arg2: any) -> (), -- Broken...
+	chdir: (arg1: any, arg2: any) -> (), -- Broken?
 	copy: (self: fs, from: string, to: string) -> (),
-	exists: (arg1: any, arg2: any) -> (),
-	filename: (path: string) -> (),
+	exists: (self: fs, path: string) -> (),
+	filename: (path: string) -> string,
 	join: (...string) -> string,
 	mkdir: (self: fs, path: string) -> (),
 	mklink: (arg1: any, arg2: any, arg3: any) -> (),
