@@ -43,7 +43,6 @@ declare FileSystem: {
 	new: (files: Folder?) -> FileSystemObject
 }
 
-type fs = typeof(require("fs"))
 
 -- NOTE: fs type isn't working here...
 type RawFileSystem = {

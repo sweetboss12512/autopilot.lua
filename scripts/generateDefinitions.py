@@ -34,6 +34,16 @@ def main():
     part_generator = PartDefinitionsGenerator(parts_data)
     content += "-- Part Types\n"
     content += part_generator.generate().strip() + "\n"
+
+    # Add require types so globals can access their types TODO: There may be a better way to do this
+    # Pretty much nothing but RawFileSystem requires this (since it needs fs) but maybe other globals will too
+    for file_name in os.listdir("./requires"):
+        with open(os.path.join("./requires", file_name)) as fr:
+            lines = fr.readlines()
+
+            # Weird way of removing the return statement from the files
+            content += "".join(lines[:-1]).strip() + "\n"
+
     # Generate globals
     with open(globals_file, 'r') as fr:
         content += fr.read().strip() + "\n"
