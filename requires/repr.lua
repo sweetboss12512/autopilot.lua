@@ -18,7 +18,7 @@ type options = {
 	trailingSeparator: boolean,
 }
 
---- Returns a pretty printed version of the string
-return function(tble: { [any]: any }, options: options?): string
-	return nil :: any
-end
+--- Returns a pretty printed version of the table
+type repr = (tble: { [any]: any }, options: options?) -> string
+
+return (nil :: any) :: repr
