@@ -96,9 +96,9 @@ class PartDefinitionsGenerator():
                 event_code += f"\n        & ((self: {part['_type']}, event: {event_name} | string, callback: ({', '.join(event_arguments_code)}) -> ()) -> PilotLuaEventConnection)"
             
             if len(event_arguments_types) > 0:
-                event_connection_code += f"\n    {event_name[1:-1]}: PilotLuaScriptConnection<{', '.join(event_arguments_types)}>,"
+                event_connection_code += f"\n    {event_name[1:-1]}: PilotLuaScriptSignal<{', '.join(event_arguments_types)}>,"
             else:
-                event_connection_code += f"\n    {event_name[1:-1]}: PilotLuaScriptConnection<any>,"
+                event_connection_code += f"\n    {event_name[1:-1]}: PilotLuaScriptSignal<any>,"
 
         event_code += ","
         event_code += event_connection_code

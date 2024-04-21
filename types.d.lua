@@ -16,8 +16,8 @@ export type PilotLuaEventConnection = {
 }
 -- The new :Connect().
 -- Example: Keyboard.TextInputted:Connect()
-export type PilotLuaScriptConnection<T...> = {
-	Connect: (self: PilotLuaScriptConnection<T...>, fn: (T...) -> ()) -> PilotLuaEventConnection,
+export type PilotLuaScriptSignal<T...> = {
+	Connect: (self: PilotLuaScriptSignal<T...>, fn: (T...) -> ()) -> PilotLuaEventConnection,
 }
 export type PilotLuaScreenObject = {
     ChangeProperties: (self: PilotLuaScreenObject, properties: {[string]: any}) -> (),
