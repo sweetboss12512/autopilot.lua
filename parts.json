@@ -10,7 +10,17 @@
          "Size": "Vector3",
          "Durability": "number",
          "Temperature": "number",
-         "Orientation": "Vector3"
+         "CreatedBy": "number",
+         "PartLocked": "number",
+         "Health": "number",
+         "Heat": "number",
+         "Orientation": "Vector3",
+         "Material": "Enum.Material",
+         "Anchored": "boolean",
+         "Mass": "number",
+         "AssemblyMass": "number",
+         "AssemblyLinearVelocity": "Vector3",
+         "AssemblyCenterOfMass": "Vector3"
       },
       "methods": {
          "Trigger": {},
@@ -34,6 +44,12 @@
          },
          "GetTemperature": {
             "returns": "number"
+         },
+         "GetNameOfOwnerAsync": {
+            "returns": "string"
+         },
+         "GetOwnerId": {
+            "returns": "number"
          }
       },
       "events": {
@@ -42,7 +58,8 @@
                "userID": "number"
             }
          ],
-         "Configured": []
+         "Configured": [],
+         "Destroying": []
       }
    },
    "Gyro": {
@@ -373,6 +390,31 @@
          "GetPartsInRange": {
             "returns": "{PilotLuaPart}"
          }
+      }
+   },
+   "ProximityButton": {
+      "extends": "Part",
+      "events": {
+         "PromptButtonHoldBegan": [
+            {
+               "player": "string"
+            }
+         ],
+         "PromptButtonHoldEnded": [
+            {
+               "player": "string"
+            }
+         ],
+         "PromptTriggered": [
+            {
+               "player": "string"
+            }
+         ],
+         "PromptTriggerEnded": [
+            {
+               "player": "string"
+            }
+         ]
       }
    },
    "Light": {
