@@ -9,11 +9,14 @@
          "Color": "Color3",
          "Size": "Vector3",
          "Durability": "number",
-         "Temperature": "number"
+         "Temperature": "number",
+         "Orientation": "Vector3"
       },
       "methods": {
          "Trigger": {},
-         "Configure": { "--comment": "Autofilled by definitions generator" },
+         "Configure": {
+            "--comment": "Autofilled by definitions generator"
+         },
          "GetColor": {
             "returns": "Color3"
          },
@@ -34,7 +37,11 @@
          }
       },
       "events": {
-         "Triggered": [{ "userID": "number" }],
+         "Triggered": [
+            {
+               "userID": "number"
+            }
+         ],
          "Configured": []
       }
    },
@@ -48,7 +55,11 @@
       },
       "methods": {
          "PointAt": {
-            "arguments": [{ "position": "Vector3" }]
+            "arguments": [
+               {
+                  "position": "Vector3"
+               }
+            ]
          }
       }
    },
@@ -56,26 +67,62 @@
       "extends": "Part",
       "methods": {
          "SimulateKeyPress": {
-            "arguments": [{ "key": "string?" }, { "player": "string" }]
+            "arguments": [
+               {
+                  "key": "string?"
+               },
+               {
+                  "player": "string"
+               }
+            ]
          },
          "SimulateTextInput": {
-            "arguments": [{ "input": "string?" }, { "player": "string" }]
+            "arguments": [
+               {
+                  "input": "string?"
+               },
+               {
+                  "player": "string"
+               }
+            ]
          }
       },
       "events": {
          "KeyPressed": [
-            { "key": "Enum.KeyCode" },
-            { "keyString": "string" },
-            { "state": "Enum.UserInputState" },
-            { "player": "string" }
+            {
+               "key": "Enum.KeyCode"
+            },
+            {
+               "keyString": "string"
+            },
+            {
+               "state": "Enum.UserInputState"
+            },
+            {
+               "player": "string"
+            }
          ],
-         "TextInputted": [{ "text": "string" }, { "player": "string" }]
+         "TextInputted": [
+            {
+               "text": "string"
+            },
+            {
+               "player": "string"
+            }
+         ]
       }
    },
    "Microphone": {
       "extends": "Part",
       "events": {
-         "Chatted": [{ "player": "string" }, { "message": "string" }]
+         "Chatted": [
+            {
+               "player": "string"
+            },
+            {
+               "message": "string"
+            }
+         ]
       }
    },
    "LifeSensor": {
@@ -94,7 +141,11 @@
       },
       "methods": {
          "GetReading": {
-            "arguments": [{ "typeId": "number" }],
+            "arguments": [
+               {
+                  "typeId": "number"
+               }
+            ],
             "returns": "any"
          }
       }
@@ -117,10 +168,21 @@
       "methods": {
          "ClearDisk": {},
          "Write": {
-            "arguments": [{ "key": "string" }, { "data": "any" }]
+            "arguments": [
+               {
+                  "key": "string"
+               },
+               {
+                  "data": "any"
+               }
+            ]
          },
          "Read": {
-            "arguments": [{ "key": "string" }],
+            "arguments": [
+               {
+                  "key": "string"
+               }
+            ],
             "returns": "any"
          },
          "ReadEntireDisk": {
@@ -149,28 +211,60 @@
       },
       "methods": {
          "PostRequest": {
-            "arguments": [{ "domain": "string" }, { "data": "string" }]
+            "arguments": [
+               {
+                  "domain": "string"
+               },
+               {
+                  "data": "string"
+               }
+            ]
          },
          "GetRequest": {
-            "arguments": [{ "domain": "string" }],
+            "arguments": [
+               {
+                  "domain": "string"
+               }
+            ],
             "returns": "string"
          },
          "SendMessage": {
-            "arguments": [{ "data": "string" }, { "id": "number" }]
+            "arguments": [
+               {
+                  "data": "string"
+               },
+               {
+                  "id": "number"
+               }
+            ]
          },
          "RealPostRequest": {
             "arguments": [
-               { "domain": "string" },
-               { "data": "string" },
-               { "asyncBool": "boolean?" },
-               { "transformFunction": "(...any) -> ()?" },
-               { "optionalHeaders": "{[string]: any}?" }
+               {
+                  "domain": "string"
+               },
+               {
+                  "data": "string"
+               },
+               {
+                  "asyncBool": "boolean?"
+               },
+               {
+                  "transformFunction": "(...any) -> ()?"
+               },
+               {
+                  "optionalHeaders": "{[string]: any}?"
+               }
             ],
             "returns": "{response: string, success: boolean}"
          }
       },
       "events": {
-         "MessageSent": [{ "data": "string" }]
+         "MessageSent": [
+            {
+               "data": "string"
+            }
+         ]
       }
    },
    "Screen": {
@@ -184,14 +278,22 @@
          },
          "ClearElements": {
             "arguments": [
-               { "className": "string?" },
-               { "properties": "{[string]: any}?" }
+               {
+                  "className": "string?"
+               },
+               {
+                  "properties": "{[string]: any}?"
+               }
             ]
          },
          "CreateElement": {
             "arguments": [
-               { "className": "ScreenObjectList | string" },
-               { "properties": "{[string]: any}" }
+               {
+                  "className": "ScreenObjectList | string"
+               },
+               {
+                  "properties": "{[string]: any}"
+               }
             ],
             "returns": "PilotLuaScreenObject"
          }
@@ -208,9 +310,21 @@
          }
       },
       "events": {
-         "CursorMoved": [{ "cursor": "Cursor" }],
-         "CursorPressed": [{ "cursor": "Cursor" }],
-         "CursorReleased": [{ "cursor": "Cursor" }]
+         "CursorMoved": [
+            {
+               "cursor": "Cursor"
+            }
+         ],
+         "CursorPressed": [
+            {
+               "cursor": "Cursor"
+            }
+         ],
+         "CursorReleased": [
+            {
+               "cursor": "Cursor"
+            }
+         ]
       }
    },
    "TouchSensor": {
@@ -226,7 +340,11 @@
          "TriggerMode": "number"
       },
       "events": {
-         "OnClick": [{ "player": "string" }]
+         "OnClick": [
+            {
+               "player": "string"
+            }
+         ]
       }
    },
    "ARController": {
@@ -235,10 +353,25 @@
          "ClearElements3D": {},
          "CreateElement3D": {
             "arguments": [
-               { "shape": "Element3DShape" },
-               { "properties": "{[string]: any}" }
+               {
+                  "shape": "Element3DShape"
+               },
+               {
+                  "properties": "{[string]: any}"
+               }
             ],
             "returns": "PilotLuaElement3D"
+         }
+      }
+   },
+   "Scanner": {
+      "extends": "Part",
+      "methods": {
+         "GetDistance": {
+            "arguments": []
+         },
+         "GetPartsInRange": {
+            "returns": "{PilotLuaPart}"
          }
       }
    },
@@ -250,7 +383,11 @@
       },
       "methods": {
          "SetColor": {
-            "arguments": [{ "color": "Color3" }]
+            "arguments": [
+               {
+                  "color": "Color3"
+               }
+            ]
          }
       }
    },
@@ -258,7 +395,11 @@
       "extends": "Part",
       "methods": {
          "SetPosition": {
-            "arguments": [{ "depth": "number" }]
+            "arguments": [
+               {
+                  "depth": "number"
+               }
+            ]
          }
       }
    },
@@ -284,7 +425,9 @@
          },
          "WhenRegionLoads": {
             "arguments": [
-               { "callback": "(regionData: WhenRegionLoadsData) -> ()" }
+               {
+                  "callback": "(regionData: WhenRegionLoadsData) -> ()"
+               }
             ]
          }
       }
@@ -325,11 +468,19 @@
       },
       "methods": {
          "PlaySound": {
-            "arguments": [{ "soundId": "number" }]
+            "arguments": [
+               {
+                  "soundId": "number"
+               }
+            ]
          },
          "ClearSounds": {},
          "Chat": {
-            "arguments": [{ "message": "string" }]
+            "arguments": [
+               {
+                  "message": "string"
+               }
+            ]
          }
       }
    },
@@ -362,7 +513,11 @@
       },
       "methods": {
          "SetAngle": {
-            "arguments": [{ "angle": "number" }]
+            "arguments": [
+               {
+                  "angle": "number"
+               }
+            ]
          }
       }
    },

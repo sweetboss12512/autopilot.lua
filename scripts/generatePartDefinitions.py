@@ -81,16 +81,28 @@ class PartDefinitionsGenerator():
         # Events
         i = -1
         event_code = ""
+        event_connection_code = ""
         for event_name, event in part.get("events", {}).items():
             i += 1
             event_arguments_code = []
+            event_arguments_types = []
             for arg_name, arg_type in _parse_list_dict(event):
                 event_arguments_code.append(f"{arg_name}: {arg_type}")
+                event_arguments_types.append(arg_type)
             event_name = f"\"{event_name}\""
             if i == 0:
                 event_code += f"Connect: ((self: {part['_type']}, event: {event_name} | string, callback: ({', '.join(event_arguments_code)}) -> ()) -> PilotLuaEventConnection)"
             else:
                 event_code += f"\n        & ((self: {part['_type']}, event: {event_name} | string, callback: ({', '.join(event_arguments_code)}) -> ()) -> PilotLuaEventConnection)"
+            
+            if len(event_arguments_types) > 0:
+                event_connection_code += f"\n    {event_name[1:-1]}: PilotLuaScriptSignal<{', '.join(event_arguments_types)}>,"
+            else:
+                event_connection_code += f"\n    {event_name[1:-1]}: PilotLuaScriptSignal<any>,"
+
+        event_code += ","
+        event_code += event_connection_code
+            
         # There cannot be 0 events
         if i == -1:
             raise Exception(f"{part['_name']} has no events? {part}")

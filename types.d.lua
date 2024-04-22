@@ -14,6 +14,11 @@ type Element3DShape = "Ball" | "Block" | "Cylinder" | "Wedge" | "CornerWedge"
 export type PilotLuaEventConnection = {
     Unbind: (self: PilotLuaEventConnection) -> ()
 }
+-- The new :Connect().
+-- Example: Keyboard.TextInputted:Connect()
+export type PilotLuaScriptSignal<T...> = {
+	Connect: (self: PilotLuaScriptSignal<T...>, fn: (T...) -> ()) -> PilotLuaEventConnection,
+}
 export type PilotLuaScreenObject = {
     ChangeProperties: (self: PilotLuaScreenObject, properties: {[string]: any}) -> (),
     AddChild: (self: PilotLuaScreenObject, child: PilotLuaScreenObject) -> (),
@@ -21,7 +26,7 @@ export type PilotLuaScreenObject = {
 	Clone: (self: PilotLuaScreenObject) -> PilotLuaScreenObject,
 	[string]: any
 }
-export type PilotLuaElement3D = PilotLuaScreenObject & {
+export type PilotLuaElement3D = --[[ PilotLuaScreenObject &  ]]{
 	Size: Vector3,
 	Position: Vector3,
 	CFrame: CFrame,
