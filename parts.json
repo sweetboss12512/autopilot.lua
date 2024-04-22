@@ -39,6 +39,9 @@
          "GetMethods": {
             "returns": "{[string]: any}"
          },
+         "GetEvents": {
+            "returns": "{[string]: any}"
+         },
          "GetDurability": {
             "returns": "number"
          },
@@ -50,7 +53,8 @@
          },
          "GetOwnerId": {
             "returns": "number"
-         }
+         },
+         "Click": {}
       },
       "events": {
          "Triggered": [
@@ -125,6 +129,20 @@
             },
             {
                "player": "string"
+            }
+         ],
+         "UserInput": [
+            {
+               "keyCode": "Enum.KeyCode"
+            },
+            {
+               "keyName": "string"
+            },
+            {
+               "inputState": "Enum.UserInputState"
+            },
+            {
+               "inputType": "Enum.UserInputType"
             }
          ]
       }
