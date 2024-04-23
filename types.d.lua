@@ -39,6 +39,63 @@ type Cursor = {
     Player: string,
     Pressed: boolean
 }
+type ARControllerCursor = {
+	Camera: {
+		CFrame: CFrame,
+		CameraType: Enum.CameraType,
+		DiagonalFieldOfView: number,
+		FieldOfView: number,
+		FieldOfViewMode: Enum.FieldOfViewMode,
+		Focus: CFrame,
+		HeadScale: number,
+		MaxAxisFieldOfView: number,
+		NearPlaneZ: number, 
+		RenderCFrame: CFrame,
+		ViewportSize: Vector2,
+		ViewportSizeUI: Vector2,
+	},
+	Hit: CFrame,
+	MouseDelta: Vector2,
+	Origin: CFrame,
+	Player: string,
+	Pressed: true,
+	ScreenPosition: Vector2,
+	Target: PilotLuaPart,
+	UnitRay: Ray,
+	UserCFrames: {
+		Head: CFrame,
+		LeftHand: CFrame,
+		RightHand: CFrame
+	},
+
+	UserId: number,
+	UserInput: {
+		Gamepad: {
+			
+		},
+		GamepadEnabled: false,
+		Keyboard: {
+			
+		},
+		KeyboardEnabled: true,
+		LastInputType: Enum.UserInputType,
+		Mouse: {
+			{
+				Delta: Vector3,
+				KeyCode: Enum.KeyCode,
+				Position: Vector3,
+				UserInputState: Enum.UserInputState,
+				UserInputType: Enum.UserInputType
+			}
+		},
+		TouchEnabled: false,
+		VREnabled: false
+	},
+	VirtualWorldPosition: Vector3,
+	WorldPosition: Vector3,
+	X: number,
+	Y: number
+}
 export type PilotLuaRegionInfo = {
     Type: "Planet" | "BlackHole" | "Star",
 	Subtype: "Desert" | "Terra" | "EarthLike" | "Ocean" | "Tundra" | "Forest" | "Exotic" | "Barren" | "Gas" | "Red" | "Orange" | "Yellow" | "Blue" | "Neutron",

@@ -383,7 +383,24 @@
       }
    },
    "ARController": {
-      "extends": "TouchScreen",
+      "extends": "Screen",
+      "events": {
+         "CursorMoved": [
+            {
+               "cursor": "ARControllerCursor"
+            }
+         ],
+         "CursorPressed": [
+            {
+               "cursor": "ARControllerCursor"
+            }
+         ],
+         "CursorReleased": [
+            {
+               "cursor": "ARControllerCursor"
+            }
+         ]
+      },
       "methods": {
          "ClearElements3D": {},
          "CreateElement3D": {
@@ -397,6 +414,12 @@
             ],
             "returns": "PilotLuaElement3D"
          }
+      },
+      "GetCursor": {
+         "returns": "ARControllerCursor"
+      },
+      "GetCursors": {
+         "returns": "{ARControllerCursor}"
       }
    },
    "Scanner": {
