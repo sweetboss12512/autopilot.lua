@@ -25,9 +25,14 @@ export type PilotLuaScreenObject = {
     AddChild: (self: PilotLuaScreenObject, child: PilotLuaScreenObject) -> (),
     Destroy: (self: PilotLuaScreenObject) -> (),
 	Clone: (self: PilotLuaScreenObject) -> PilotLuaScreenObject,
+	Parent: PilotLuaScreenObject,
+	GetChildren: (self: PilotLuaScreenObject) -> {PilotLuaScreenObject},
+	GetDescendants: (self: PilotLuaScreenObject) -> {PilotLuaScreenObject},
+	GetPropertyChangedSignal: (self: PilotLuaScreenObject, propertyName: string) -> RBXScriptSignal,
+	IsA: (self: PilotLuaScreenObject, className: string) -> boolean,
 	[string]: any
 }
-export type PilotLuaElement3D = --[[ PilotLuaScreenObject &  ]]{
+export type PilotLuaElement3D = {
 	Size: Vector3,
 	Position: Vector3,
 	CFrame: CFrame,
