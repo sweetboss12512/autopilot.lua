@@ -383,7 +383,7 @@
       }
    },
    "ARController": {
-      "extends": "Screen",
+      "extends": "TouchScreen",
       "methods": {
          "ClearElements3D": {},
          "CreateElement3D": {
