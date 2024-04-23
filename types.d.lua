@@ -12,7 +12,8 @@ type Element3DShape = "Ball" | "Block" | "Cylinder" | "Wedge" | "CornerWedge"
 
 -- Microcontroller Types
 export type PilotLuaEventConnection = {
-    Unbind: (self: PilotLuaEventConnection) -> ()
+    Unbind: (self: PilotLuaEventConnection) -> (),
+	Disconnect: (self: PilotLuaEventConnection) -> ()
 }
 -- The new :Connect().
 -- Example: Keyboard.TextInputted:Connect()
@@ -58,7 +59,7 @@ type ARControllerCursor = {
 	MouseDelta: Vector2,
 	Origin: CFrame,
 	Player: string,
-	Pressed: true,
+	Pressed: boolean,
 	ScreenPosition: Vector2,
 	Target: PilotLuaPart,
 	UnitRay: Ray,
@@ -73,11 +74,11 @@ type ARControllerCursor = {
 		Gamepad: {
 			
 		},
-		GamepadEnabled: false,
+		GamepadEnabled: boolean,
 		Keyboard: {
 			
 		},
-		KeyboardEnabled: true,
+		KeyboardEnabled: boolean,
 		LastInputType: Enum.UserInputType,
 		Mouse: {
 			{
@@ -88,8 +89,8 @@ type ARControllerCursor = {
 				UserInputType: Enum.UserInputType
 			}
 		},
-		TouchEnabled: false,
-		VREnabled: false
+		TouchEnabled: boolean,
+		VREnabled: boolean
 	},
 	VirtualWorldPosition: Vector3,
 	WorldPosition: Vector3,
