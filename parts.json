@@ -311,6 +311,9 @@
          "GetDimensions": {
             "returns": "Vector2"
          },
+         "GetCanvas": {
+            "returns": "PilotLuaScreenObject"
+         },
          "ClearElements": {
             "arguments": [
                {
