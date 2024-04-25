@@ -198,3 +198,13 @@ export type WhenRegionLoadsData = { -- This may be missing things. - sweetboss15
 		InPlanet: boolean
 	},
 }
+
+-- Taken from https://github.com/JohnnyMorganz/luau-lsp/blob/main/scripts/globalTypes.d.lua 
+type HttpRequestOptions = {
+    Url: string,
+    Method: "GET" | "HEAD" | "POST" | "PUT" | "DELETE" | "CONNECT" | "OPTIONS" | "TRACE" | "PATCH" | nil,
+    Headers: { [string]: string }?,
+    Body: string?,
+	Compress: Enum.HttpCompression?
+}
+type HttpResponseData = typeof(game:GetService("HttpService"):RequestAsync(nil :: any))

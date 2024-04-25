@@ -292,6 +292,48 @@
                }
             ],
             "returns": "{response: string, success: boolean}"
+         },
+         "RequestAsync": {
+            "arguments": [
+               {
+                  "options": "HttpRequestOptions"
+               }
+            ],
+            "returns": "HttpResponseData"
+         },
+         "GetAsync": {
+            "arguments": [
+               {
+                  "url": "string"
+               },
+               {
+                  "noCache": "boolean"
+               },
+               {
+                  "headers": "{[string]: any}"
+               }
+            ],
+            "returns": "string"
+         },
+         "PostAsync": {
+            "arguments": [
+               {
+                  "url": "string"
+               },
+               {
+                  "data": "string?"
+               },
+               {
+                  "contentType": "Enum.HttpContentType?"
+               },
+               {
+                  "compress": "boolean"
+               },
+               {
+                  "headers": "{[string]: any}"
+               }
+            ],
+            "returns": "string"
          }
       },
       "events": {
