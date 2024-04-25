@@ -8,7 +8,7 @@ declare SandboxRunID: number
 
 declare Beep: (pitch: number?) -> ()
 declare JSONDecode: (json: string) -> {[string]: any}
-declare JSONEncode: (dataToEncode: {[string]: any}) -> string
+declare JSONEncode: (dataToEncode: {[string]: any} | {any}) -> string
 declare Communicate: () -> ()
 
 declare Microcontroller: PilotLuaMicrocontroller
