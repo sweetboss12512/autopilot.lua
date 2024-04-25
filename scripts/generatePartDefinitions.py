@@ -11,7 +11,18 @@ READONLY_PROPERTIES = [
     "Temperature",
     "Size",
     "Color",
-    "Durability"
+    "Durability",
+    "CreatedBy",
+    "PartLocked",
+    "Health",
+    "Heat",
+    "Orientation",
+    "Material",
+    "Anchored",
+    "Mass",
+    "AssemblyMass",
+    "AssemblyLinearVelocity",
+    "AssemblyCenterOfMass",
 ]
 
 def _parse_list_dict(listdict: list) -> list[tuple]:
