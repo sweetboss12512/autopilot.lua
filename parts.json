@@ -242,7 +242,7 @@
    "Modem": {
       "extends": "Part",
       "properties": {
-         "NetworkID": "number"
+         "NetworkID": "string"
       },
       "methods": {
          "PostRequest": {
@@ -269,7 +269,7 @@
                   "data": "string"
                },
                {
-                  "id": "number"
+                  "id": "string"
                }
             ]
          },
@@ -331,6 +331,15 @@
                },
                {
                   "headers": "{[string]: any}"
+               }
+            ],
+            "returns": "string"
+         },
+         "SendLocalMessage": {},
+         "UrlEncode": {
+            "arguments": [
+               {
+                  "input": "string"
                }
             ],
             "returns": "string"
@@ -783,6 +792,9 @@
       "extends": "Part",
       "properties": {
          "Code": "string"
+      },
+      "methods": {
+         "Shutdown": {}
       }
    },
    "RemoteControl": {
