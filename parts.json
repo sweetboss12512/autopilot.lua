@@ -494,10 +494,42 @@
       "extends": "Part",
       "methods": {
          "GetDistance": {
-            "arguments": []
+            "arguments": [
+               {
+                  "part": "PilotLuaPart"
+               }
+            ],
+            "returns": "number?"
          },
          "GetPartsInRange": {
+            "arguments": [
+               {
+                  "range": "number?"
+               },
+               {
+                  "className": "string?"
+               }
+            ],
             "returns": "{PilotLuaPart}"
+         },
+         "CalculateCost": {
+            "arguments": [
+               {
+                  "range": "number?"
+               }
+            ],
+            "returns": "number"
+         },
+         "Locate": {
+            "arguments": [
+               {
+                  "part": "{GUID: string}"
+               },
+               {
+                  "scanners": "{PilotLuaScanner}"
+               }
+            ],
+            "returns": "Vector3"
          }
       }
    },
