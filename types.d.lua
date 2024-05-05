@@ -9,6 +9,7 @@ export type PlanetType = "Desert" | "Terra" | "EarthLike" | "Ocean" | "Tundra" |
 export type StarType = "Red" | "Orange" | "Yellow" | "Blue" | "Neutron"
 -- ARController elements, Enum.PartType:GetEnumItems()
 type Element3DShape = "Ball" | "Block" | "Cylinder" | "Wedge" | "CornerWedge"
+type CanvasContext = "2D" | "3D"
 
 -- Part Permission strings
 type PartPermission = "Modify" | "Unlock" | "Paint" | "Configure" | "Interact" | "Attach"

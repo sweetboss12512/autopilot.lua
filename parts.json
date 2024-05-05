@@ -382,25 +382,30 @@
             "returns": "Vector2"
          },
          "GetCanvas": {
+            "arguments": [
+               {
+                  "context": "CanvasContext?"
+               }
+            ],
             "returns": "PilotLuaScreenObject"
          },
          "ClearElements": {
             "arguments": [
                {
-                  "className": "string?"
-               },
-               {
-                  "properties": "{[string]: any}?"
+                  "context": "CanvasContext?"
                }
             ]
          },
          "CreateElement": {
             "arguments": [
                {
-                  "className": "ScreenObjectList | string"
+                  "className": "ScreenObjectList | Element3DShape | string"
                },
                {
                   "properties": "{[string]: any}"
+               },
+               {
+                  "context": "CanvasContext?"
                }
             ],
             "returns": "PilotLuaScreenObject"
