@@ -67,7 +67,7 @@
       "events": {
          "Triggered": [
             {
-               "part": "PilotLuaPart?"
+               "part": "$self?"
             }
          ],
          "Configured": [],

@@ -120,7 +120,7 @@ class PartDefinitionsGenerator():
         # Finish code
         code.append(event_code)
         code_sep = f",\n    "
-        return f"export type {part['_type']} = {{\n    {code_sep.join(code)}\n}}\n"
+        return f"export type {part['_type']} = {{\n    {code_sep.join(code).replace('$self', part['_type'])}\n}}\n"
 
     def _generate_and_store_part(self, part: dict):
         if self.parts.get(part['_name']): return self.parts[part['_name']]
