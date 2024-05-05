@@ -46,6 +46,11 @@
             "returns": "number"
          },
          "GetTemperature": {
+            "arguments": [
+               {
+                  "unit": "'K' | 'C' | 'F'"
+               }
+            ],
             "returns": "number"
          },
          "GetNameOfOwnerAsync": {
