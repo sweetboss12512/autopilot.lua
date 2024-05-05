@@ -82,6 +82,15 @@
          "Destroying": []
       }
    },
+   "Microcontroller": {
+      "extends": "Part",
+      "properties": {
+         "Code": "string"
+      },
+      "methods": {
+         "Shutdown": {}
+      }
+   },
    "Gyro": {
       "extends": "Part",
       "properties": {
@@ -500,6 +509,42 @@
          "returns": "{ARControllerCursor}"
       }
    },
+   "ARGlasses": {
+      "extends": [
+         "ARController",
+         "Microcontroller"
+      ],
+      "events": {
+         "KeyPressed": [
+            {
+               "key": "Enum.KeyCode"
+            },
+            {
+               "keyString": "string"
+            },
+            {
+               "state": "Enum.UserInputState"
+            },
+            {
+               "player": "string"
+            }
+         ],
+         "UserInput": [
+            {
+               "keyCode": "Enum.KeyCode"
+            },
+            {
+               "keyName": "string"
+            },
+            {
+               "inputState": "Enum.UserInputState"
+            },
+            {
+               "inputType": "Enum.UserInputType"
+            }
+         ]
+      }
+   },
    "Scanner": {
       "extends": "Part",
       "methods": {
@@ -842,15 +887,6 @@
       "--warning": "Property 'Time' may have incorrect type",
       "properties": {
          "Time": "string"
-      }
-   },
-   "Microcontroller": {
-      "extends": "Part",
-      "properties": {
-         "Code": "string"
-      },
-      "methods": {
-         "Shutdown": {}
       }
    },
    "RemoteControl": {

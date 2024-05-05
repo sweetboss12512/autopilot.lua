@@ -51,14 +51,28 @@ class PartDefinitionsGenerator():
     def _generate_part(self, part: dict):
         code = []
         # Copy parent
-        if "extends" in part:
-            super_part = self._get_part(part["extends"])
-            if super_part == None:
-                raise Exception(f"Unknown part in extends clause: {part['extends']}")
-            for key in ["methods", "properties", "events"]:
-                if not key in part:
-                    part.update({key: {}})
-                part[key].update(super_part.get(key, {}))
+        if "extends" in part: # TODO: Stop the copy and pasting. - sweetboss151
+            extends = part["extends"]
+
+            if type(extends) == list:
+                for className in extends:
+                    super_part = self._get_part(className)
+                    if super_part == None:
+                        raise Exception(f"Unknown part in extends clause: {className}")
+                    for key in ["methods", "properties", "events"]:
+                        if not key in part:
+                            part.update({key: {}})
+                        part[key].update(super_part.get(key, {}))
+
+            else:
+                super_part = self._get_part(extends)
+                if super_part == None:
+                    raise Exception(f"Unknown part in extends clause: {extends}")
+                for key in ["methods", "properties", "events"]:
+                    if not key in part:
+                        part.update({key: {}})
+                    part[key].update(super_part.get(key, {}))
+
         # Set as default part
         if part.get("default", False) == True:
             if self.default_part_name:
