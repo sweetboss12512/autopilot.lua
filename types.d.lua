@@ -10,6 +10,9 @@ export type StarType = "Red" | "Orange" | "Yellow" | "Blue" | "Neutron"
 -- ARController elements, Enum.PartType:GetEnumItems()
 type Element3DShape = "Ball" | "Block" | "Cylinder" | "Wedge" | "CornerWedge"
 
+-- Part Permission strings
+type PartPermission = "Modify" | "Unlock" | "Paint" | "Configure" | "Interact" | "Attach"
+
 -- Microcontroller Types
 export type PilotLuaEventConnection = {
     Unbind: (self: PilotLuaEventConnection) -> (),

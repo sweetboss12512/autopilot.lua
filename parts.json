@@ -54,12 +54,20 @@
          "GetOwnerId": {
             "returns": "number"
          },
+         "HasPermission": {
+            "arguments": [
+               {
+                  "permission": "PartPermission"
+               }
+            ],
+            "returns": "boolean"
+         },
          "Click": {}
       },
       "events": {
          "Triggered": [
             {
-               "userID": "number"
+               "part": "PilotLuaPart?"
             }
          ],
          "Configured": [],
