@@ -241,10 +241,13 @@
          },
          "GetResource": {
             "returns": "string"
+         },
+         "GetResourceAmount": {
+            "returns": "number"
          }
       }
    },
-   "Container": {
+   "Tank": {
       "extends": "Bin"
    },
    "Modem": {
