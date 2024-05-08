@@ -1,3 +1,7 @@
+--[[
+	# Players
+	Very epic
+]]
 type players = {
 	GetUsername: (userId: number) -> string,
 	GetUserId: (username: string) -> number,
