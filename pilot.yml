@@ -13,6 +13,9 @@ globals:
    GetPartsFromPort:
       any: true
 
+   GetPort:
+      any: true
+
    Beep:
       any: true
 

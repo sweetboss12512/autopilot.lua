@@ -1,5 +1,5 @@
 -- Utility Types
-export type PilotLuaPortLike = number | {GUID: string}
+export type PilotLuaPortLike = number | PilotLuaPort 
 type Iterator<K, V> = () -> (K, V)
 
 -- Some literals for autocomplete
@@ -36,13 +36,13 @@ export type PilotLuaScreenObject = {
 	IsA: (self: PilotLuaScreenObject, className: string) -> boolean,
 	[string]: any
 }
-export type PilotLuaElement3D = {
+export type PilotLuaElement3D = Part --[[ {
 	Size: Vector3,
 	Position: Vector3,
 	CFrame: CFrame,
 	Color: Color3,
 	BrickColor: BrickColor
-}
+} ]]
 type Cursor = {
     X: number,
     Y: number,
