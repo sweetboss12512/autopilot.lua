@@ -7,6 +7,10 @@
             "fs",
             "players",
             "repr",
+            "signal",
+            "symbol",
+            "tableUtil",
+            "trove",
             "tween"
         ]
     },
