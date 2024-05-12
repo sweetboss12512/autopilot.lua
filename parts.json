@@ -40,7 +40,7 @@
             "returns": "{[string]: any}"
          },
          "GetEvents": {
-            "returns": "{[string]: any}"
+            "returns": "{string}"
          },
          "GetDurability": {
             "returns": "number"
@@ -711,6 +711,14 @@
                   "soundId": "number"
                }
             ]
+         },
+         "LoadSound": {
+            "arguments": [
+               {
+                  "soundId": "number"
+               }
+            ],
+            "returns": "Sound"
          },
          "ClearSounds": {},
          "Chat": {
