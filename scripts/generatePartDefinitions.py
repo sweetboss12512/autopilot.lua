@@ -1,6 +1,7 @@
 import os
 import sys
 import json
+import re
 
 # Properties to exclude from :Configure()
 READONLY_PROPERTIES = [
@@ -50,28 +51,24 @@ class PartDefinitionsGenerator():
 
     def _generate_part(self, part: dict):
         code = []
+        extends = []
         # Copy parent
         if "extends" in part: # TODO: Stop the copy and pasting. - sweetboss151
-            extends = part["extends"]
-
-            if type(extends) == list:
-                for className in extends:
-                    super_part = self._get_part(className)
-                    if super_part == None:
-                        raise Exception(f"Unknown part in extends clause: {className}")
-                    for key in ["methods", "properties", "events"]:
-                        if not key in part:
-                            part.update({key: {}})
-                        part[key].update(super_part.get(key, {}))
-
+            if type(part["extends"]) == list:
+                for v in part["extends"]:
+                    extends.append(v)
             else:
-                super_part = self._get_part(extends)
+                extends.append(part["extends"])
+
+            for className in extends:
+                super_part = self._get_part(className)
                 if super_part == None:
-                    raise Exception(f"Unknown part in extends clause: {extends}")
+                    raise Exception(f"Unknown part in extends clause: {className}")
                 for key in ["methods", "properties", "events"]:
                     if not key in part:
                         part.update({key: {}})
-                    part[key].update(super_part.get(key, {}))
+                    # part[key].update(super_part.get(key, {}))
+
 
         # Set as default part
         if part.get("default", False) == True:
@@ -127,14 +124,26 @@ class PartDefinitionsGenerator():
 
         event_code += ","
         event_code += event_connection_code
+
+        # This is so bad
+        extends_code = ""
+
+        for v in extends:
+            extends_code += f"PilotLua{v} & "
             
-        # There cannot be 0 events
-        if i == -1:
-            raise Exception(f"{part['_name']} has no events? {part}")
+        # There cannot be 0 events -- yes there can!!! grr :rage:
+        # if i == -1:
+        #     raise Exception(f"{part['_name']} has no events? {part}")
         # Finish code
+
         code.append(event_code)
         code_sep = f",\n    "
-        return f"export type {part['_type']} = {{\n    {code_sep.join(code)}\n}}\n"
+        output = f"export type {part['_type']} = {extends_code}{{\n    {code_sep.join(code)}\n}}\n"
+        
+        # This is actually the dumbest thing i've ever done. I don't know WHERE this random comma is appearing but I'm tired.
+        # - sweetboss151
+        output = re.sub(",\n    ,", ",", output)
+        return output
 
     def _generate_and_store_part(self, part: dict):
         if self.parts.get(part['_name']): return self.parts[part['_name']]
