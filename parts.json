@@ -70,6 +70,41 @@
          "IsGrounded": {
             "returns": "boolean"
          },
+         "HasComponent": {
+            "arguments": [
+               {
+                  "componentName": "string"
+               }
+            ],
+            "returns": "boolean"
+         },
+         "CanInstallComponent": {
+            "arguments": [
+               {
+                  "componentName": "string"
+               }
+            ],
+            "returns": "boolean"
+         },
+         "CanUninstallComponent": {
+            "arguments": [
+               {
+                  "componentname": "string"
+               }
+            ],
+            "returns": "boolean"
+         },
+         "ListComponents": {
+            "returns": "{string}"
+         },
+         "GetComponent": {
+            "arguments": [
+               {
+                  "componentname": "string"
+               }
+            ],
+            "returns": "PilotLuaComponentObject"
+         },
          "Click": {}
       },
       "events": {
@@ -78,6 +113,48 @@
                "part": "PilotLuaPart?"
             }
          ],
+         "Damaged": [
+            {
+               "damage": "number"
+            },
+            {
+               "damageType": "string"
+            },
+            {
+               "sourceObject": "PilotLuaPart?"
+            }
+         ],
+         "Tick": [
+            {
+               "deltaTime": "number"
+            }
+         ],
+         "Equipped": [
+            {
+               "userId": "number"
+            }
+         ],
+         "UnEquipped": [
+            {
+               "userId": "number"
+            }
+         ],
+         "Activated": [
+            {
+               "userId": "number"
+            }
+         ],
+         "Deactivated": [
+            {
+               "userId": "number"
+            }
+         ],
+         "Dropped": [
+            {
+               "userId": "number"
+            }
+         ],
+         "ComponentsUpdated": [],
          "Configured": [],
          "Destroying": []
       }

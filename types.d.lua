@@ -212,3 +212,29 @@ type HttpRequestOptions = {
 	Compress: Enum.HttpCompression?
 }
 type HttpResponseData = typeof(game:GetService("HttpService"):RequestAsync(nil :: any))
+
+--[[
+	This does **NOT** follow the conventions of `PilotLuaPart`
+]]
+export type PilotLuaComponentObject = {
+	-- Methods
+	IsDestroyed: (self: PilotLuaComponentObject) -> boolean,
+	GetObject: (self: PilotLuaComponentObject) -> PilotLuaPart & any,
+	GetConfigurable: (self: PilotLuaComponentObject, configurableName: string) -> any, -- TODO:
+	SetConfigurable: <T>(self: PilotLuaComponentObject, configurableName: string, value: T) -> T,
+	Trigger: (self: PilotLuaComponentObject) -> (),
+	Click: (self: PilotLuaComponentObject) -> (),
+	ListConfigurables: (self: PilotLuaComponentObject) -> {string},
+	ListMethods: (self: PilotLuaComponentObject) -> {string},
+	ListEvents: (self: PilotLuaComponentObject) -> {string},
+
+	-- Events
+	Installed: PilotLuaScriptSignal<any>,
+	Uninstalled: PilotLuaScriptSignal<any>, 
+	Configured: PilotLuaScriptSignal<any>,
+	Triggered: PilotLuaScriptSignal<any>,
+	--[[
+		@param userId: number
+	]]
+	OnClick: PilotLuaScriptSignal<number>,
+}
