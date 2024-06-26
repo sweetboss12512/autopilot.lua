@@ -203,6 +203,29 @@ export type WhenRegionLoadsData = { -- This may be missing things. - sweetboss15
 	},
 }
 
+-- Telescope:GetCurrentCordinate
+-- TODO:
+type CurrentCoordinateMT = {
+	Clone: (self: CurrentCoordinateData) -> (),
+	CoordStringWithoutPlanet: (self: CurrentCoordinateData, arg1: any) -> string,
+	GetRandom: (self: CurrentCoordinateData, arg2: any) -> Random,
+	GetSeed: (self: CurrentCoordinateData, arg2: any) -> number,
+	ToArray: (self: CurrentCoordinateData, arg2: any) -> {number | boolean},
+	__index: CurrentCoordinateMT,
+	__add: (CurrentCoordinateData) -> CurrentCoordinateData,
+	__div: (CurrentCoordinateData) -> CurrentCoordinateData,
+	__eq: (CurrentCoordinateData) -> CurrentCoordinateData,
+	__mul: (CurrentCoordinateData) -> CurrentCoordinateData,
+	__tostring: () -> string,
+	type: "Coordinate"
+}
+type CurrentCoordinateData = typeof(setmetatable({} :: {
+	InPlanet: boolean,
+	SolarCoordinates: Vector2,
+	UniverseCoordinates: Vector2,
+}, {} :: CurrentCoordinateMT))
+
+
 -- Taken from https://github.com/JohnnyMorganz/luau-lsp/blob/main/scripts/globalTypes.d.lua 
 type HttpRequestOptions = {
     Url: string,

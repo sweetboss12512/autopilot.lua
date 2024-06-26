@@ -432,10 +432,10 @@
                   "contentType": "Enum.HttpContentType?"
                },
                {
-                  "compress": "boolean"
+                  "compress": "boolean?"
                },
                {
-                  "headers": "{[string]: any}"
+                  "headers": "{[string]: any}?"
                }
             ],
             "returns": "string"
@@ -744,6 +744,9 @@
                   "callback": "(regionData: WhenRegionLoadsData) -> ()"
                }
             ]
+         },
+         "GetCurrentCoordinate": {
+            "returns": "CurrentCoordinateData"
          }
       }
    },
