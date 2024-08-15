@@ -1,3 +1,13 @@
 {
-   "languageMode": "strict"
+   "languageMode": "strict",
+   "aliases": {
+      "fs": "requires/fs.lua",
+      "players": "requires/players.lua",
+      "repr": "requires/repr.lua",
+      "signal": "requires/signal.lua",
+      "symbol": "requires/symbol.lua",
+      "tableUtil": "requires/tableUtil.lua",
+      "trove": "requires/trove.lua",
+      "tween": "requires/tween.lua"
+   }
 }
