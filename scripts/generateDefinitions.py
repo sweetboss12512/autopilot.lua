@@ -3,8 +3,10 @@ import sys
 import json
 from generatePartDefinitions import PartDefinitionsGenerator
 
-class DefinitionsGenerator():
+
+class DefinitionsGenerator:
     pass
+
 
 def main():
     if len(sys.argv) < 2:
@@ -18,17 +20,17 @@ def main():
     output_file = os.path.join(project, "build", "pilot.d.lua")
     # Generate header comment
     header_content = "--[[\n"
-    with open(license_file, 'r') as fr:
+    with open(license_file, "r") as fr:
         for line in fr.readlines():
             header_content += f"  {line}"
     header_content += "\n  https://github.com/flxwed/autopilot.lua/\n--]]\n"
     # Generate types
     content = ""
-    with open(types_file, 'r') as fr:
+    with open(types_file, "r") as fr:
         content += fr.read().strip() + "\n"
     # Get parts data
     parts_data = None
-    with open(parts_file, 'r') as fr:
+    with open(parts_file, "r") as fr:
         parts_data = json.load(fr)
     # Generate parts
     part_generator = PartDefinitionsGenerator(parts_data)
@@ -42,10 +44,10 @@ def main():
             lines = fr.readlines()
 
             # Weird way of removing the return statement from the files
-            content += "".join(lines[:-1]).strip() + "\n"
+            content += "".join(lines[:-1]).strip().replace("export ", "") + "\n"
 
     # Generate globals
-    with open(globals_file, 'r') as fr:
+    with open(globals_file, "r") as fr:
         content += fr.read().strip() + "\n"
     # Generate port globals
     content += "-- Port-related microcontroller globals\n"
@@ -54,22 +56,31 @@ def main():
     for part, _ in parts_data.items():
         if part == part_generator.default_part_name:
             continue
-        single_overloads.append(f"((port: PilotLuaPortLike, partType: \"{part}\") -> PilotLua{part})")
-        multi_overloads.append(f"((port: PilotLuaPortLike, partType: \"{part}\") -> {{PilotLua{part}}})")
-    single_overloads.append(f"((port: PilotLuaPortLike, partType: PilotLuaPartList | string) -> PilotLua{part_generator.default_part_name})")
+        single_overloads.append(
+            f'((port: PilotLuaPortLike, partType: "{part}") -> PilotLua{part})'
+        )
+        multi_overloads.append(
+            f'((port: PilotLuaPortLike, partType: "{part}") -> {{PilotLua{part}}})'
+        )
+    single_overloads.append(
+        f"((port: PilotLuaPortLike, partType: PilotLuaPartList | string) -> PilotLua{part_generator.default_part_name})"
+    )
 
     # uhh it works -- sweetboss151 1/6/2024
-    multi_overloads.append(f"((port: PilotLuaPortLike, partType: PilotLuaPartList | string) -> {{{'PilotLua' + part_generator.default_part_name}}})")
-    sep = '\n    & '
+    multi_overloads.append(
+        f"((port: PilotLuaPortLike, partType: PilotLuaPartList | string) -> {{{'PilotLua' + part_generator.default_part_name}}})"
+    )
+    sep = "\n    & "
     content += f"declare GetPartFromPort: {sep.join(single_overloads)}\n"
     content += f"declare GetPartsFromPort: {sep.join(multi_overloads)}\n"
     # Finalize
     content = content.strip().replace("\n\n", "\n") + "\n"
     if not os.path.isdir(os.path.join(project, "build")):
         os.makedirs(os.path.join(project, "build"))
-    with open(output_file, 'w+') as fw:
+    with open(output_file, "w+") as fw:
         fw.write(header_content + "\n" + content)
         print(f"{output_file} created successfully")
+
 
 if __name__ == "__main__":
     main()
